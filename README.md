@@ -1,28 +1,34 @@
 # xAI - MED8
 
-## Requirements
-Make sure all dependencies are installed:
-```
+### 1. Install dependencies
+From the project root (`Backup`):
+```bash
+cd Backup
 pip install -r requirements.txt
 ```
-## Start the server
-Navigate to the Backend folder and run:
-```
+
+---
+
+### 2. Start the Backend
+Navigate into the Backend folder and fire up the server:
+```bash
 cd Backend
-
 uvicorn main:app --reload --port 8000
-
-Ellers: 
-
-python3.13 -m uvicorn main:app --reload --port 8000
 ```
 
-The API will be available at `http://127.0.0.1:8000`
+> If that doesn't work, try:
+> ```bash
+> python3.13 -m uvicorn main:app --reload --port 8000
+> ```
 
-## Start the frontend
-In a separate terminal, navigate to the Frontend folder and run:
-```
+---
+
+### 3. Start the Frontend
+Open a **separate terminal**, then:
+```bash
 cd Frontend
 npm run dev
 ```
 
+> Make sure the backend is running before starting the frontend.
+> If that dont work, spørg davied 
