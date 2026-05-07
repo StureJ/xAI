@@ -8,7 +8,7 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
-import Loading_Diagram from "../assets/Loading_Diagram.png";
+import LoadingOverlay from "./LoadingOverlay";
 
 const zeroLinePlugin = {
   id: "zeroLinePlugin",
@@ -177,20 +177,8 @@ function Diagram({ shapData, isLoading }) {
         </div>
       </div>
 
-      {isLoading && (
-        <div style={{
-          position: "absolute",
-          inset: 0,
-          background: "rgba(255,255,255,0.75)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: 6,
-          zIndex: 10,
-        }}>
-          <img src={Loading_Diagram} alt="Loading..." style={{ width: 500, opacity: 1 }} />
-        </div>
-      )}
+
+        {isLoading && <LoadingOverlay message="Calculating SHAP values…" />}
     </div>
   );
 }
