@@ -135,7 +135,7 @@ function US_Changeable({
               <div className="slider-row">
                 <div className="slider-info-box">
                   <span style={{
-                    color: isInRange(patient?.glucose, c)
+                    color: isInRange(patient?.glucose * 18, c)
                       ? "#8CC8EB"
                       : "#FFB89C",
                     WebkitTextStroke: "0.8px black"
@@ -159,7 +159,7 @@ function US_Changeable({
               <div className="slider-row">
                 <div className="slider-info-box">
                   <span style={{
-                    color: isInRange(patient?.cholesterol, d)
+                    color: isInRange(patient?.cholesterol * 38.67, d)
                       ? "#8CC8EB"
                       : "#FFB89C",
                     WebkitTextStroke: "0.8px black"

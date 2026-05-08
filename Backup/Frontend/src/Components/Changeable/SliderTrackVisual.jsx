@@ -1,4 +1,6 @@
 function SliderTrackVisual({ value, min, max, marker }) {
+  const clampedMarker = Math.min(max, Math.max(min, Number(marker)));
+
   const isRange = Array.isArray(value) && value.length === 2;
   const IN_RANGE = "#d7e3eb";
   const OUT_RANGE = "#f9e5dd";
@@ -104,7 +106,7 @@ function SliderTrackVisual({ value, min, max, marker }) {
       <div
         style={{
           position: "absolute",
-          left: toGradientStop(marker),
+          left: toGradientStop(clampedMarker),
           top: 0,
           transform: "translateX(-50%)",
           pointerEvents: "none",
