@@ -7,6 +7,20 @@ import Other from "../../Categories/Others.jsx";
 
 function ThresholdLabels({ value, min, max }) {
   const vals = Array.isArray(value) ? value : [value];
+
+  const MIN_GAP = 6;
+
+  const positions = vals.map((v) => ((v - min) / (max - min)) * 100);
+
+  const adjusted = [...positions];
+  for (let i = 1; i < adjusted.length; i++) {
+    if (adjusted[i] - adjusted[i - 1] < MIN_GAP) {
+      const mid = (adjusted[i] + adjusted[i - 1]) / 2;
+      adjusted[i - 1] = mid - MIN_GAP / 2;
+      adjusted[i] = mid + MIN_GAP / 2;
+    }
+  }
+
   return (
     <div style={{ position: "relative", height: 0, overflow: "visible", marginBottom: "-5px" }}>
       {vals.map((v, i) => (
@@ -14,7 +28,7 @@ function ThresholdLabels({ value, min, max }) {
           key={i}
           style={{
             position: "absolute",
-            left: `${((v - min) / (max - min)) * 100}%`,
+            left: `${adjusted[i]}%`,
             transform: "translateX(-50%)",
             fontSize: 11,
             fontWeight: "bold",
@@ -49,16 +63,6 @@ function MS_Changeable({
   const [c, setC] = useState([60, 140]);
   const [d, setD] = useState([70, 100]);
 
-  useEffect(() => {
-    async function fetchPatient() {
-      const res = await fetch("http://localhost:8000/patient");
-      const data = await res.json();
-      setPatient(data);
-      await sendToBackend();
-    }
-    fetchPatient();
-  }, [refreshKey]);
-
   async function sendToBackend() {
     setIsLoading(true);
     try {
@@ -91,6 +95,16 @@ function MS_Changeable({
     }
   }
 
+  useEffect(() => {
+    async function fetchPatient() {
+      const res = await fetch("http://localhost:8000/patient");
+      const data = await res.json();
+      setPatient(data);
+      await sendToBackend();
+    }
+    fetchPatient();
+  }, [refreshKey]);
+
   return (
     <div className="VariableChangeable" style={{ position: "relative" }}>
       <h2 className="Changeabletitle">Changeable Variables</h2>
@@ -111,7 +125,7 @@ function MS_Changeable({
                   <SliderTrackVisual value={a} min={60} max={240} marker={patient?.sys_blood_pressure} />
                   <ThresholdLabels value={a} min={60} max={240} />
                   <div className="slider-input-wrapper">
-                    <p className="GuidelineTextBox">Thresholds based on the model’s optimal binning</p>
+                    <p className="GuidelineTextBox">Thresholds based on the model's optimal binning</p>
                   </div>
                 </div>
               </div>
@@ -130,7 +144,7 @@ function MS_Changeable({
                   <SliderTrackVisual value={b} min={20} max={220} marker={patient?.dis_blood_pressure} />
                   <ThresholdLabels value={b} min={20} max={220} />
                   <div className="slider-input-wrapper">
-                    <p className="GuidelineTextBox">Thresholds based on the model’s optimal binning</p>
+                    <p className="GuidelineTextBox">Thresholds based on the model's optimal binning</p>
                   </div>
                 </div>
               </div>
@@ -149,7 +163,7 @@ function MS_Changeable({
                   <SliderTrackVisual value={c} min={0} max={190} marker={(patient?.glucose * 18).toFixed(1)} />
                   <ThresholdLabels value={c} min={0} max={190} />
                   <div className="slider-input-wrapper">
-                    <p className="GuidelineTextBox">Thresholds based on the model’s optimal binning</p>
+                    <p className="GuidelineTextBox">Thresholds based on the model's optimal binning</p>
                   </div>
                 </div>
               </div>
@@ -168,7 +182,7 @@ function MS_Changeable({
                   <SliderTrackVisual value={d} min={0} max={220} marker={(patient?.cholesterol * 38.67).toFixed(1)} />
                   <ThresholdLabels value={d} min={0} max={220} />
                   <div className="slider-input-wrapper">
-                    <p className="GuidelineTextBox">Thresholds based on the model’s optimal binning</p>
+                    <p className="GuidelineTextBox">Thresholds based on the model's optimal binning</p>
                   </div>
                 </div>
               </div>

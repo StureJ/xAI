@@ -8,10 +8,8 @@ function RangeSlider({ value, onChange, onAfterChange, min, max, step = 1 }) {
       max={max}
       values={value}
 
-      // Fires continuously while dragging
       onChange={onChange}
 
-      // ✅ Fires once when user releases thumb
       onFinalChange={(vals) => {
         onChange(vals); // keep state synced
         if (onAfterChange) {

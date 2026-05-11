@@ -1,14 +1,69 @@
 import pandas as pd
 
-Patient_hyccdxarrydprbq = {
-    'age': 84,
+Patient_wrtnikjvfomphym = {
+    'age': 87,
     'gender': 'male',
-    'cholesterol': 4.5,
-    'dis_blood_pressure': 100,
-    'glucose': 5.88,
+    'cholesterol': 'none', #Måske problem?
+    'dis_blood_pressure': 70,
+    'glucose': 11.5,
+    'hospital_stroke': 'true',
+    'covid_test': 'false',
+    'sys_blood_pressure': 110,
+
+    'before_onset_cilostazol': 'false',
+    'before_onset_clopidrogel': 'false',
+    'before_onset_dipyridamol': 'false',
+    'before_onset_prasugrel': 'false',
+    'before_onset_ticagrelor': 'false',
+    'before_onset_ticlopidine': 'false',
+    'before_onset_warfarin': 'false',
+
+    'discharge_antidiabetics': 'none',
+    'discharge_apixaban': 'false',
+    'discharge_cilostazol': 'false',
+    'discharge_clopidrogel': 'false',
+    'discharge_dabigatran': 'true',
+    'discharge_dipyridamol': 'none',
+    'discharge_edoxaban': 'false',
+    'discharge_heparin': 'false',
+
+    'discharge_mrs': 2,
+    'discharge_nihss_score': 6,
+    'discharge_prasugrel': 'false',
+    'discharge_rivaroxaban': 'false',
+    'discharge_ticagrelor': 'false',
+    'discharge_ticlopidine': 'false',
+    'discharge_warfarin': 'false',
+
+    'hypoperfusion_core': 'none',
+    'nihss_score': 23,
+    'physiotherapy_start_within_3days': 'none',
+    'prenotification': 'none',
+    'prestroke_mrs': 0,
+
+    'risk_congestive_heart_failure': 'true',
+    'risk_coronary_artery_disease_or_myocardial_infarction': 'none',
+    'risk_diabetes': 'true',
+    'risk_hiv': 'none',
+    'risk_hyperlipidemia': 'false',
+    'risk_hypertension': 'true',
+    'risk_previous_hemorrhagic_stroke': 'none',
+    'risk_previous_ischemic_stroke': 'none',
+    'risk_smoker': 'false',
+
+    'thrombolysis': 'true',
+    'tici_score': 3,
+}
+
+Patient_sgatdffhrrlsnto = {
+    'age': 63,
+    'gender': 'female',
+    'cholesterol': 4.4,
+    'dis_blood_pressure': 90,
+    'glucose': 10.62,
     'hospital_stroke': 'false',
     'covid_test': 'false',
-    'sys_blood_pressure': 145,
+    'sys_blood_pressure': 169,
 
     'before_onset_cilostazol': 'false',
     'before_onset_clopidrogel': 'false',
@@ -28,7 +83,7 @@ Patient_hyccdxarrydprbq = {
     'discharge_heparin': 'false',
 
     'discharge_mrs': 3,
-    'discharge_nihss_score': 5,
+    'discharge_nihss_score': 0,
     'discharge_prasugrel': 'false',
     'discharge_rivaroxaban': 'false',
     'discharge_ticagrelor': 'false',
@@ -36,17 +91,17 @@ Patient_hyccdxarrydprbq = {
     'discharge_warfarin': 'false',
 
     'hypoperfusion_core': 'none',
-    'nihss_score': 19,
+    'nihss_score': 7,
     'physiotherapy_start_within_3days': 'none',
     'prenotification': 'none',
-    'prestroke_mrs': 'none',
+    'prestroke_mrs': 3,
 
     'risk_congestive_heart_failure': 'false',
-    'risk_coronary_artery_disease_or_myocardial_infarction': 'false',
+    'risk_coronary_artery_disease_or_myocardial_infarction': 'none',
     'risk_diabetes': 'false',
-    'risk_hiv': 'false',
+    'risk_hiv': 'none',
     'risk_hyperlipidemia': 'false',
-    'risk_hypertension': 'true',
+    'risk_hypertension': 'false',
     'risk_previous_hemorrhagic_stroke': 'none',
     'risk_previous_ischemic_stroke': 'none',
     'risk_smoker': 'false',
@@ -55,70 +110,15 @@ Patient_hyccdxarrydprbq = {
     'tici_score': 'none'
 }
 
-Patient_uthjemmvtwogzcc = {
-    'age': 75,
+Patient_mieuyyadyjobnrd = {
+    'age': 59,
     'gender': 'female',
-    'cholesterol': 4.5,
-    'dis_blood_pressure': 84,
-    'glucose': 12.15,
+    'cholesterol': 3.38,
+    'dis_blood_pressure': 78,
+    'glucose': 21.0,
     'hospital_stroke': 'false',
     'covid_test': 'false',
-    'sys_blood_pressure': 130,
-
-    'before_onset_cilostazol': 'false',
-    'before_onset_clopidrogel': 'false',
-    'before_onset_dipyridamol': 'false',
-    'before_onset_prasugrel': 'false',
-    'before_onset_ticagrelor': 'false',
-    'before_onset_ticlopidine': 'false',
-    'before_onset_warfarin': 'false',
-
-    'discharge_antidiabetics': 'none',
-    'discharge_apixaban': 'false',
-    'discharge_cilostazol': 'false',
-    'discharge_clopidrogel': 'false',
-    'discharge_dabigatran': 'true',
-    'discharge_dipyridamol': 'none',
-    'discharge_edoxaban': 'false',
-    'discharge_heparin': 'false',
-
-    'discharge_mrs': 1,
-    'discharge_nihss_score': 1,
-    'discharge_prasugrel': 'false',
-    'discharge_rivaroxaban': 'false',
-    'discharge_ticagrelor': 'false',
-    'discharge_ticlopidine': 'false',
-    'discharge_warfarin': 'false',
-
-    'hypoperfusion_core': 'none',
-    'nihss_score': 11,
-    'physiotherapy_start_within_3days': 'none',
-    'prenotification': 'none',
-    'prestroke_mrs': 'none',
-
-    'risk_congestive_heart_failure': 'false',
-    'risk_coronary_artery_disease_or_myocardial_infarction': 'true',
-    'risk_diabetes': 'true',
-    'risk_hiv': 'false',
-    'risk_hyperlipidemia': 'true',
-    'risk_hypertension': 'true',
-    'risk_previous_hemorrhagic_stroke': 'none',
-    'risk_previous_ischemic_stroke': 'none',
-    'risk_smoker': 'false',
-
-    'thrombolysis': 'true',
-    'tici_score': 'none'
-}
-
-Patient_dfngrvjkictscmy = {
-    'age': 80,
-    'gender': 'female',
-    'cholesterol': 4.05,
-    'dis_blood_pressure': 84,
-    'glucose': 7.7,
-    'hospital_stroke': 'false',
-    'covid_test': 'none',
-    'sys_blood_pressure': 164,
+    'sys_blood_pressure': 182,
 
     'before_onset_cilostazol': 'false',
     'before_onset_clopidrogel': 'false',
@@ -137,24 +137,24 @@ Patient_dfngrvjkictscmy = {
     'discharge_edoxaban': 'false',
     'discharge_heparin': 'false',
 
-    'discharge_mrs': 4,
-    'discharge_nihss_score': 3,
+    'discharge_mrs': 5,
+    'discharge_nihss_score': 5,
     'discharge_prasugrel': 'false',
     'discharge_rivaroxaban': 'false',
     'discharge_ticagrelor': 'false',
     'discharge_ticlopidine': 'false',
     'discharge_warfarin': 'false',
 
-    'hypoperfusion_core': 'none',
-    'nihss_score': 4,
+    'hypoperfusion_core': 147.0,
+    'nihss_score': 19,
     'physiotherapy_start_within_3days': 'none',
     'prenotification': 'none',
-    'prestroke_mrs': 'none',
+    'prestroke_mrs': 0,
 
-    'risk_congestive_heart_failure': 'false',
-    'risk_coronary_artery_disease_or_myocardial_infarction': 'false',
+    'risk_congestive_heart_failure': 'true',
+    'risk_coronary_artery_disease_or_myocardial_infarction': 'none',
     'risk_diabetes': 'true',
-    'risk_hiv': 'false',
+    'risk_hiv': 'none',
     'risk_hyperlipidemia': 'true',
     'risk_hypertension': 'true',
     'risk_previous_hemorrhagic_stroke': 'none',
@@ -162,15 +162,15 @@ Patient_dfngrvjkictscmy = {
     'risk_smoker': 'false',
 
     'thrombolysis': 'true',
-    'tici_score': 'none'
+    'tici_score': 3
 }
 
 
 all_patients = {
-    "hyccdxarrydprbq": Patient_hyccdxarrydprbq,
-    "uthjemmvtwogzcc": Patient_uthjemmvtwogzcc,
-    "dfngrvjkictscmy": Patient_dfngrvjkictscmy,
+    "wrtnikjvfomphym": Patient_wrtnikjvfomphym,
+    "sgatdffhrrlsnto": Patient_sgatdffhrrlsnto,
+    "mieuyyadyjobnrd": Patient_mieuyyadyjobnrd,
 }
 
-active_patient_id = "hyccdxarrydprbq"
-Prediction_Patient = pd.DataFrame([Patient_hyccdxarrydprbq])
+active_patient_id = "wrtnikjvfomphym"
+Prediction_Patient = pd.DataFrame([Patient_wrtnikjvfomphym])
